@@ -31,7 +31,7 @@ STRATEGIES = {
     "Growth": 0.30,
 }
 
-app = FastAPI(title="DepositIQ API", version="2.0")
+app = FastAPI(title="Strategix API", version="2.0")
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
@@ -454,6 +454,6 @@ else:
     @app.get("/")
     def api_root() -> dict[str, str]:
         return {
-            "name": "DepositIQ API",
+            "name": "Strategix API",
             "frontend": "Run `npm run dev` inside the frontend folder.",
         }

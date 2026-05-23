@@ -179,9 +179,9 @@ function Sidebar({ page, setPage }) {
   return (
     <aside className="sidebar">
       <div className="brand">
-        <div className="brand-mark">DIQ</div>
+        <div className="brand-mark">STX</div>
         <div>
-          <strong>DepositIQ</strong>
+          <strong>Strategix</strong>
           <span>Campaign Intelligence</span>
         </div>
       </div>
@@ -507,7 +507,7 @@ function SensitivityChart({ curve }) {
 function EconomicsBars({ targeted, traditional }) {
   const rows = [
     { name: "Call Everyone", value: traditional.estimatedProfit, color: "#64748b" },
-    { name: "DepositIQ", value: targeted.estimatedProfit, color: "#0f766e" },
+    { name: "Strategix", value: targeted.estimatedProfit, color: "#0f766e" },
   ];
   const max = Math.max(...rows.map((row) => Math.abs(row.value)), 1);
 
@@ -523,7 +523,7 @@ function EconomicsBars({ targeted, traditional }) {
           <div className="chart-hover-card row-hover">
             <b>{row.name}</b>
             <em>Estimated profit: {formatCurrency(row.value)}</em>
-            <em>{row.name === "DepositIQ" ? "Model-targeted outreach" : "Baseline campaign"}</em>
+            <em>{row.name === "Strategix" ? "Model-targeted outreach" : "Baseline campaign"}</em>
           </div>
         </div>
       ))}
@@ -591,7 +591,7 @@ function CommandCenter({ data, goal, callCost, revenue, threshold, setThreshold,
   return (
     <>
       <Hero
-        title="DepositIQ"
+        title="Strategix"
         eyebrow="Command Center"
         copy="Turn bank campaign data into better call lists, clearer ROI, and faster decisions."
         metrics={[
@@ -870,7 +870,7 @@ function PrioritizePage({ data, goal, threshold, setThreshold }) {
             Rows shown
             <input type="range" min="10" max="250" step="5" value={rows} onChange={(event) => setRows(Number(event.target.value))} />
           </label>
-          <button className="primary-button full" type="button" onClick={() => downloadCsv("depositiq_filtered_leads.csv", filtered)}>
+          <button className="primary-button full" type="button" onClick={() => downloadCsv("strategix_filtered_leads.csv", filtered)}>
             Download filtered leads
           </button>
         </section>
@@ -1137,7 +1137,7 @@ function ProfilePage({ data }) {
 
 function BriefPage({ data, goal, callCost, revenue, threshold }) {
   const roi = useMemo(() => simulateRoi(data.leads, threshold, callCost, revenue), [data.leads, threshold, callCost, revenue]);
-  const generated = `DepositIQ recommends a targeted term-deposit campaign for ${goal}. At a ${formatPercent(
+  const generated = `Strategix recommends a targeted term-deposit campaign for ${goal}. At a ${formatPercent(
     threshold,
     0,
   )} score threshold, the bank should contact ${formatNumber(roi.customersContacted)} of ${formatNumber(
@@ -1172,7 +1172,7 @@ function BriefPage({ data, goal, callCost, revenue, threshold }) {
         <div className="brief-actions">
           <Metric label="Customers contacted" value={formatNumber(roi.customersContacted)} />
           <Metric label="Expected conversions" value={formatNumber(roi.expectedConversions, 1)} />
-          <button className="primary-button full" type="button" onClick={() => downloadCsv("depositiq_recommended_call_list.csv", roi.selected)}>
+          <button className="primary-button full" type="button" onClick={() => downloadCsv("strategix_recommended_call_list.csv", roi.selected)}>
             Download recommended call list
           </button>
         </div>
@@ -1207,7 +1207,7 @@ function LoadingView() {
   return (
     <main className="loading-screen">
       <div className="loader" />
-      <h1>Preparing DepositIQ</h1>
+      <h1>Preparing Strategix</h1>
       <p>Training the model and scoring the customer base.</p>
     </main>
   );
@@ -1216,7 +1216,7 @@ function LoadingView() {
 function ErrorView({ message }) {
   return (
     <main className="loading-screen">
-      <h1>DepositIQ could not start</h1>
+      <h1>Strategix could not start</h1>
       <p>{message}</p>
       <p>Make sure the FastAPI server is running on port 8000.</p>
     </main>

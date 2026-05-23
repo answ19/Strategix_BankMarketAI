@@ -1,6 +1,6 @@
-# DepositIQ
+# Strategix
 
-DepositIQ is an interactive bank campaign intelligence app that predicts which customers are most likely to subscribe to a term deposit. It combines a FastAPI machine-learning backend with a polished React/Vite frontend for lead prioritization, ROI simulation, model explainability, and manager-ready campaign briefs.
+Strategix is an interactive bank campaign intelligence app that predicts which customers are most likely to subscribe to a term deposit. It combines a FastAPI machine-learning backend with a polished React/Vite frontend for lead prioritization, ROI simulation, model explainability, and manager-ready campaign briefs.
 
 ## Features
 
