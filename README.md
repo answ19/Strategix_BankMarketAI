@@ -2,7 +2,7 @@
 
 Strategix is an interactive bank campaign intelligence app that predicts which customers are most likely to subscribe to a term deposit. It combines a FastAPI machine-learning backend with a polished React/Vite frontend for lead prioritization, ROI simulation, model explainability, and manager-ready campaign briefs.
 
-![Dashboard_image](images/Strategix_App_image.jpg)
+![Dashboard screenshot](frontend/src/images/Strategix%20App%20image.jpg)
 
 ## Features
 
